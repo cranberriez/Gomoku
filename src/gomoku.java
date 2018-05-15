@@ -1,17 +1,4 @@
-
-public class gomoku {
-
-	public gomoku() {
-//		Hello
-	}
-	
-	public static void main(String[] args) {
-		new gomoku();
-	}
-
-}
-
-/* Create tic tac toe with GUI
+/* Create gomoku
  * Author: Cameron Voigt jacob Vilevac
  * Date: 10/12/2017
  */
@@ -43,7 +30,7 @@ public class gomoku implements ActionListener
 	Container center = new Container();
 	JLabel xname = new JLabel("X wins: 0");
 	JLabel oname = new JLabel("O wins: 0");
-	Container north = new Container();
+	Container south = new Container();
 	JButton xChangeName = new JButton("change x name");
 	JButton oChangeName = new JButton("change o name");
 	JTextField xChangeField	= new JTextField();
@@ -71,16 +58,16 @@ public class gomoku implements ActionListener
 		
 		frame.add(center, BorderLayout.CENTER);	
 		//north center
-		north.setLayout(new GridLayout(3,2));	
-		north.add(xname);
-		north.add(oname);
-		north.add(xChangeName);
+		south.setLayout(new GridLayout(3,2));	
+		south.add(xname);
+		south.add(oname);
+		south.add(xChangeName);
 		xChangeName.addActionListener(this);
-		north.add(oChangeName);
+		south.add(oChangeName);
 		oChangeName.addActionListener(this);
-		north.add(xChangeField);
-		north.add(oChangeField);
-		frame.add(north, BorderLayout.NORTH);
+		south.add(xChangeField);
+		south.add(oChangeField);
+		frame.add(south, BorderLayout.NORTH);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
