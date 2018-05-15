@@ -1,5 +1,5 @@
 /* Create gomoku
- * Author: Cameron Voigt jacob Vilevac
+ * Author: Cameron Voigt & Jacob Vilevac
  * Date: 10/12/2017
  */
 
@@ -58,16 +58,18 @@ public class gomoku implements ActionListener
 		
 		frame.add(center, BorderLayout.CENTER);	
 		//north center
-		south.setLayout(new GridLayout(3,2));	
+		south.setLayout(new GridLayout(1,3));	
 		south.add(xname);
+		south.add(new JLabel("RESET"));
 		south.add(oname);
-		south.add(xChangeName);
-		xChangeName.addActionListener(this);
-		south.add(oChangeName);
-		oChangeName.addActionListener(this);
-		south.add(xChangeField);
-		south.add(oChangeField);
-		frame.add(south, BorderLayout.NORTH);
+		//south.add(xChangeName);
+		//xChangeName.addActionListener(this);
+		
+		//south.add(oChangeName);
+		//oChangeName.addActionListener(this);
+		//south.add(xChangeField);
+		//south.add(oChangeField);
+		frame.add(south, BorderLayout.SOUTH);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
