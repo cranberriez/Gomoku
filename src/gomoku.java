@@ -1,8 +1,8 @@
 
 public class gomoku {
 
-	public void gomoku() {
-//		Hello
+	public gomoku() {
+		
 	}
 	
 	public static void main(String[] args) {
