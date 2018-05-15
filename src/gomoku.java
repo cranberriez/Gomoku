@@ -1,18 +1,5 @@
-
-public class gomoku {
-
-	public gomoku() {
-//		Hello
-	}
-	
-	public static void main(String[] args) {
-		new gomoku();
-	}
-
-}
-
-/* Create tic tac toe with GUI
- * Author: Cameron Voigt jacob Vilevac
+/* Create gomoku
+ * Author: Cameron Voigt & Jacob Vilevac
  * Date: 10/12/2017
  */
 
