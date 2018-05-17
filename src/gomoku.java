@@ -33,6 +33,7 @@ public class gomoku implements ActionListener
 	Container south = new Container();
 	JButton xChangeName = new JButton("change x name");
 	JButton oChangeName = new JButton("change o name");
+	JButton reset = new JButton("RESET");
 	JTextField xChangeField	= new JTextField();
 	JTextField oChangeField	= new JTextField();
 	String xPlayerName = "x";
@@ -60,7 +61,7 @@ public class gomoku implements ActionListener
 		//north center
 		south.setLayout(new GridLayout(1,3));	
 		south.add(xname);
-		south.add(new JLabel("RESET"));
+		south.add(reset);
 		south.add(oname);
 		//south.add(xChangeName);
 		//xChangeName.addActionListener(this);
@@ -190,40 +191,10 @@ public static void main(String[] args)
 	
 	public boolean checkWin(int player) //goes through and checks every win combination
 	{
-		if (board[0][0] == player && board[0][1] == player && board[0][2] == player)
-		{
-			return true;
-		}
-		if (board[1][0] == player && board[1][1] == player && board[1][2] == player)
-		{
-			return true;
-		}
-		if (board[2][0] == player && board[2][1] == player && board[2][2] == player)
-		{
-			return true;
-		} //check rows
-		if (board[0][0] == player && board[1][0] == player && board[2][0] == player)
-		{
-			return true;
-		}
-		if (board[0][1] == player && board[1][1] == player && board[2][1] == player)
-		{
-			return true;
-		}
-		if (board[0][2] == player && board[1][2] == player && board[2][2] == player)
-		{
-			return true;
-		} //check columns
-		if (board[0][0] == player && board[1][1] == player && board[2][2] == player)
-		{
-			return true;
-		}
-		if (board[2][0] == player && board[1][1] == player && board[0][2] == player)
-		{
-			return true;
-		} //check diag
+		//look where the player placed the piece and check for a win
 		return false;
 	}
+	
 	public boolean checkTie()  //checks if every spot on the board is filled and then determines it's a tie
 	{
 		for (int row = 0; row < board.length; row++) {
