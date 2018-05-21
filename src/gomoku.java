@@ -19,8 +19,8 @@ public class gomoku implements ActionListener
 
 	
 	JFrame frame = new JFrame();
-	JButton[][] button = new JButton[3][3];
-	int[][] board = new int[3][3];
+	JButton[][] button = new JButton[15][15];
+	int[][] board = new int[15][15];
 	final int BLANK = 0; 
 	final int X_MOVE = 1; 
 	final int O_MOVE = 2; 
@@ -43,10 +43,10 @@ public class gomoku implements ActionListener
 	
 	public gomoku()	
 	{
-		frame.setSize(600,600);
+		frame.setSize(1000,1000);
 		//center container
 		frame.setLayout(new BorderLayout());
-		center.setLayout(new GridLayout(3,3));
+		center.setLayout(new GridLayout(15,15));
 		for (int i = 0; i < button.length; i++) 
 		{
 			for (int j = 0; j < button[0].length; j++)  //J is column I is row
@@ -62,6 +62,7 @@ public class gomoku implements ActionListener
 		south.setLayout(new GridLayout(1,3));	
 		south.add(xname);
 		south.add(reset);
+		reset.addActionListener(this);
 		south.add(oname);
 		//south.add(xChangeName);
 		//xChangeName.addActionListener(this);
@@ -174,6 +175,7 @@ public static void main(String[] args)
 			}
 			
 		}
+		
 		if (gridbutton == false)
 		{
 			if (event.getSource().equals(xChangeName) == true)
@@ -185,6 +187,10 @@ public static void main(String[] args)
 			{
 				oPlayerName = oChangeField.getText();
 				oname.setText(oPlayerName + " wins: " + owins);
+			}
+			else if (event.getSource().equals(reset))
+			{
+				clearBoard();
 			}
 		}
 	}
@@ -209,16 +215,20 @@ public static void main(String[] args)
 	}
 	public void clearBoard() //clears the board of every move
 	{
-		for (int a = 0; a < board.length; a++) {
-			for (int b = 0; b < board[0].length; b++) {
-				board[a][b] = BLANK;
-				button[a][b].setText("");
+		for (int a = 0; a < board.length; a++) 
+		{
+			for (int b = 0; b < board[0].length; b++) 
+			{
+				board[a][b] = BLANK; //makes the board blank
+				button[a][b].setEnabled(true); //enable all buttons
+				button[a][b].setText(""); //gets rid of x and o text
 				
 			}
 			
 		}
 			turn = X_TURN;
 	}
+
 	
 
 }
