@@ -18,8 +18,6 @@ import com.sun.prism.paint.Color;
 
 public class gomoku implements ActionListener 
 {
-
-	
 	JFrame frame = new JFrame();
 	JButton[][] button = new JButton[15][15];
 	int[][] board = new int[15][15];
@@ -58,7 +56,6 @@ public class gomoku implements ActionListener
 				button[j][i].addActionListener(this);
 			}
 		}
-		
 		frame.add(center, BorderLayout.CENTER);	
 		//north center
 		south.setLayout(new GridLayout(1,3));	
@@ -77,20 +74,11 @@ public class gomoku implements ActionListener
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
-		
-		
 	}
 	
-	
-	
-	
-
-
 public static void main(String[] args)
 {
-	
 	new gomoku();
-	
 }
 	@Override
 	public void actionPerformed(ActionEvent event) //if a button is pressed do all this stuff
@@ -99,7 +87,7 @@ public static void main(String[] args)
 		boolean gridbutton = false;
 		for (int i = 0; i < button.length; i++) 
 		{
-			for (int j = 0; j < button[0].length; j++) 
+			for (int j = 0; j < button[i].length; j++) 
 			{
 				if (event.getSource().equals(button[j][i]))
 				{
@@ -140,15 +128,10 @@ public static void main(String[] args)
 								oname.setText(oPlayerName + " wins: " + owins);
 								clearBoard();
 							}
-								
-						}
-							
+						}	
 					}
-					
 				}
-		
 			}
-			
 		}
 		
 		if (gridbutton == false)
