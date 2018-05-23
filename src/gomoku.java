@@ -21,7 +21,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-//import com.sun.prism.paint.Color;
 
 public class gomoku implements ActionListener 
 {
@@ -35,8 +34,8 @@ public class gomoku implements ActionListener
 	final int O_TURN = 1; 
 	int turn = X_TURN; 
 	Container center = new Container();
-	JLabel xname = new JLabel("X wins: 0");
-	JLabel oname = new JLabel("O wins: 0");
+	JLabel xname = new JLabel("Black wins: 0");
+	JLabel oname = new JLabel("White wins: 0");
 	Container south = new Container();
 	JButton xChangeName = new JButton("change x name");
 	JButton oChangeName = new JButton("change o name");
