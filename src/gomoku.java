@@ -203,7 +203,7 @@ public static void main(String[] args)
 		}
 		
 		//----------------------------------------------------------------------VERTICAL----------------------------------------
-		total = 0;
+		total = 1;
 		if (y > 0 && board[x][y-1] == player) //to the left of the piece
 		{
 			total++;
