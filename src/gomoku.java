@@ -20,6 +20,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import com.sun.prism.paint.Color;
+
 public class gomoku implements ActionListener 
 {
 	JFrame frame = new JFrame();
@@ -57,6 +59,7 @@ public class gomoku implements ActionListener
 			for (int j = 0; j < button[0].length; j++)  //J is column I is row
 			{
 				button[j][i] = new JButton("");
+				button[j][i].setBackground(Color.WHITE);
 				center.add(button[j][i]);
 				button[j][i].addActionListener(this);
 			}
