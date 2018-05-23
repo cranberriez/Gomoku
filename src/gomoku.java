@@ -183,6 +183,7 @@ public static void main(String[] args)
 				board[a][b] = BLANK; //makes the board blank
 				button[a][b].setEnabled(true); //enable all buttons
 				button[a][b].setText(""); //gets rid of x and o text
+				button[a][b].setIcon(null);
 			}
 			
 		}
