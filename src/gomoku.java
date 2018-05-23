@@ -103,7 +103,9 @@ public static void main(String[] args)
 						{
 							try {
 								Image Black_Piece = ImageIO.read(new File("Black_Piece.JPG"));
-								current.setIcon(new ImageIcon(Black_Piece));
+								ImageIcon B_Icon = new ImageIcon(Black_Piece);
+								current.setIcon(B_Icon);
+								current.setDisabledIcon(B_Icon);
 							}
 							catch (Exception ex)
 							{
@@ -118,7 +120,9 @@ public static void main(String[] args)
 						{
 							try {
 								Image White_Piece = ImageIO.read(new File("White_Piece.JPG"));
-								current.setIcon(new ImageIcon(White_Piece));
+								ImageIcon W_Icon = new ImageIcon(White_Piece);
+								current.setIcon(W_Icon);
+								current.setDisabledIcon(W_Icon);
 							}
 							catch (Exception ex)
 							{
