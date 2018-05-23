@@ -16,7 +16,6 @@ public class checks
 	public boolean checkWin(int[][] board, int player, int x, int y) //goes through and checks every win combination
 	{
 		//look where the player placed the piece and check for a win
-		int total = 1;
 		System.out.println(x + " " + y);
 		/*
 		 * Check what's nearby
@@ -25,6 +24,8 @@ public class checks
 		 * check both directions and add
 		 */
 		//--------------------------------------------------------------------HOROZONTAL---------------------------------------
+		int total = 1;
+		
 		if (x > 0 && board[x-1][y] == player) //to the left of the piece
 		{
 			total++;

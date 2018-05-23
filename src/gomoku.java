@@ -118,6 +118,14 @@ public static void main(String[] args)
 							// current.setText("X");
 							current.setEnabled(false);
 							board[j][i] = X_MOVE;
+							if (check.checkWin(board, X_MOVE, j, i) == true)
+							{
+								//xwins yay
+								xwins++;
+								xname.setText(xPlayerName + " wins: " + xwins);
+								//clearBoard();
+								System.out.println("X WIN");
+							}
 							turn = O_TURN;
 						}
 						else
@@ -135,23 +143,7 @@ public static void main(String[] args)
 							//current.setText("O");
 							current.setEnabled(false);
 							board[j][i] = O_MOVE;
-							turn = X_TURN;
-						}
-						if (check.checkTie(board) == true)
-						{
-							clearBoard();
-						}
-						else
-						{
-							if (check.checkWin(board, X_MOVE, j, i) == true)
-							{
-								//xwins yay
-								xwins++;
-								xname.setText(xPlayerName + " wins: " + xwins);
-								//clearBoard();
-								System.out.println("X WIN");
-							}
-							else if (check.checkWin(board, O_MOVE, j, i) == true)
+							if (check.checkWin(board, O_MOVE, j, i) == true)
 							{
 								//o wins yay
 								owins++;
@@ -159,7 +151,12 @@ public static void main(String[] args)
 								//clearBoard();
 								System.out.println("O WIN");
 							}
-						}	
+							turn = X_TURN;
+						}
+						if (check.checkTie(board) == true)
+						{
+							clearBoard();
+						}
 					}
 				}
 			}
