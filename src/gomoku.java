@@ -23,17 +23,17 @@ import javax.swing.JTextField;
 
 //import com.sun.prism.paint.Color;
 
-public class gomoku implements ActionListener 
+public class gomoku implements ActionListener
 {
 	JFrame frame = new JFrame();
 	JButton[][] button = new JButton[15][15];
 	int[][] board = new int[15][15];
-	final int BLANK = 0; 
-	final int X_MOVE = 1; 
-	final int O_MOVE = 2; 
-	final int X_TURN = 0; 
-	final int O_TURN = 1; 
-	int turn = X_TURN; 
+	final int BLANK = 0;
+	final int X_MOVE = 1;
+	final int O_MOVE = 2;
+	final int X_TURN = 0;
+	final int O_TURN = 1;
+	int turn = X_TURN;
 	Container center = new Container();
 	JLabel xname = new JLabel("X wins: 0");
 	JLabel oname = new JLabel("O wins: 0");
@@ -48,14 +48,14 @@ public class gomoku implements ActionListener
 	int xwins = 0;
 	int owins = 0;
 	checks check = new checks();
-	
-	public gomoku()	
+
+	public gomoku()
 	{
 		frame.setSize(1000,1000);
 		//center container
 		frame.setLayout(new BorderLayout());
 		center.setLayout(new GridLayout(15,15));
-		for (int i = 0; i < button.length; i++) 
+		for (int i = 0; i < button.length; i++)
 		{
 			for (int j = 0; j < button[0].length; j++)  //J is column I is row
 			{
@@ -65,26 +65,26 @@ public class gomoku implements ActionListener
 				button[j][i].addActionListener(this);
 			}
 		}
-		frame.add(center, BorderLayout.CENTER);	
+		frame.add(center, BorderLayout.CENTER);
 		//north center
-		south.setLayout(new GridLayout(1,3));	
+		south.setLayout(new GridLayout(1,3));
 		south.add(xname);
 		south.add(reset);
 		reset.addActionListener(this);
 		south.add(oname);
 		//south.add(xChangeName);
 		//xChangeName.addActionListener(this);
-		
+
 		//south.add(oChangeName);
 		//oChangeName.addActionListener(this);
 		//south.add(xChangeField);
 		//south.add(oChangeField);
 		frame.add(south, BorderLayout.SOUTH);
-		
+
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}
-	
+
 public static void main(String[] args)
 {
 	new gomoku();
@@ -94,9 +94,9 @@ public static void main(String[] args)
 	{
 		JButton current;
 		boolean gridbutton = false;
-		for (int i = 0; i < button.length; i++) 
+		for (int i = 0; i < button.length; i++)
 		{
-			for (int j = 0; j < button[i].length; j++) 
+			for (int j = 0; j < button[i].length; j++)
 			{
 				if (event.getSource().equals(button[j][i]))
 				{
@@ -161,7 +161,7 @@ public static void main(String[] args)
 				}
 			}
 		}
-		
+
 		if (gridbutton == false)
 		{
 			if (event.getSource().equals(xChangeName) == true)
@@ -180,23 +180,23 @@ public static void main(String[] args)
 			}
 		}
 	}
-	
+
 	public void clearBoard() //clears the board of every move
 	{
-		for (int a = 0; a < board.length; a++) 
+		for (int a = 0; a < board.length; a++)
 		{
-			for (int b = 0; b < board[0].length; b++) 
+			for (int b = 0; b < board[0].length; b++)
 			{
 				board[a][b] = BLANK; //makes the board blank
 				button[a][b].setEnabled(true); //enable all buttons
 				button[a][b].setText(""); //gets rid of x and o text
 				button[a][b].setIcon(null);
 			}
-			
+
 		}
 		turn = X_TURN; //its X's turn
 	}
 
-	
+
 
 }
