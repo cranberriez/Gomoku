@@ -148,14 +148,16 @@ public static void main(String[] args)
 								//xwins yay
 								xwins++;
 								xname.setText(xPlayerName + " wins: " + xwins);
-								clearBoard();
+								//clearBoard();
+								System.out.println("X WIN");
 							}
 							else if (check.checkWin(board, O_MOVE, j, i) == true)
 							{
 								//o wins yay
 								owins++;
 								oname.setText(oPlayerName + " wins: " + owins);
-								clearBoard();
+								//clearBoard();
+								System.out.println("O WIN");
 							}
 						}	
 					}
