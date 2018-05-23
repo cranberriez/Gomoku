@@ -7,8 +7,12 @@
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -39,6 +43,9 @@ public class gomoku implements ActionListener
 	int xwins = 0;
 	int owins = 0;
 	checks check = new checks();
+	
+	Image White_Piece = ImageIO.read(getClass().getResource("White_Piece.JPG"));
+
 	
 	public gomoku()	
 	{
@@ -103,6 +110,7 @@ public static void main(String[] args)
 						else
 						{
 							current.setText("O");
+						    current.setIcon(new ImageIcon(White_Piece));
 							current.setEnabled(false);
 							board[j][i] = O_MOVE;
 							turn = X_TURN;
