@@ -5,6 +5,7 @@
 
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.Image;
@@ -20,7 +21,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import com.sun.prism.paint.Color;
+//import com.sun.prism.paint.Color;
 
 public class gomoku implements ActionListener 
 {
