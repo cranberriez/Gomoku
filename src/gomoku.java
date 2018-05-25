@@ -29,7 +29,7 @@ public class gomoku implements ActionListener
 {
 	//Variables and Objects
 	JFrame frame = new JFrame();
-	JButton[][] button = new JButton[15][15];
+	static JButton[][] button = new JButton[15][15];
 	int[][] board = new int[15][15];
 	final int BLANK = 0;
 	final int B_MOVE = 1;
