@@ -21,8 +21,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-//import com.sun.prism.paint.Color;
-
 public class gomoku implements ActionListener
 {
 	JFrame frame = new JFrame();
@@ -35,16 +33,12 @@ public class gomoku implements ActionListener
 	final int O_TURN = 1;
 	int turn = X_TURN;
 	Container center = new Container();
-	JLabel xname = new JLabel("X wins: 0");
-	JLabel oname = new JLabel("O wins: 0");
+	JLabel xname = new JLabel("Black wins: 0");
+	JLabel oname = new JLabel("White wins: 0");
 	Container south = new Container();
-	JButton xChangeName = new JButton("change x name");
-	JButton oChangeName = new JButton("change o name");
 	JButton reset = new JButton("RESET");
-	JTextField xChangeField	= new JTextField();
-	JTextField oChangeField	= new JTextField();
-	String xPlayerName = "x";
-	String oPlayerName = "o";
+	String xPlayerName = "Black";
+	String oPlayerName = "White";
 	int xwins = 0;
 	int owins = 0;
 	checks check = new checks();
@@ -69,16 +63,11 @@ public class gomoku implements ActionListener
 		//north center
 		south.setLayout(new GridLayout(1,3));
 		south.add(xname);
+		xname.setHorizontalAlignment(JLabel.CENTER);
 		south.add(reset);
 		reset.addActionListener(this);
 		south.add(oname);
-		//south.add(xChangeName);
-		//xChangeName.addActionListener(this);
-
-		//south.add(oChangeName);
-		//oChangeName.addActionListener(this);
-		//south.add(xChangeField);
-		//south.add(oChangeField);
+		oname.setHorizontalAlignment(JLabel.CENTER);
 		frame.add(south, BorderLayout.SOUTH);
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -164,17 +153,7 @@ public static void main(String[] args)
 
 		if (gridbutton == false)
 		{
-			if (event.getSource().equals(xChangeName) == true)
-			{
-				xPlayerName = xChangeField.getText();
-				xname.setText(xPlayerName + " wins: " + xwins);
-			}
-			else if (event.getSource().equals(oChangeName) == true) //if you click on change name
-			{
-				oPlayerName = oChangeField.getText();
-				oname.setText(oPlayerName + " wins: " + owins);
-			}
-			else if (event.getSource().equals(reset)) //if you click reset
+			if (event.getSource().equals(reset)) //if you click reset
 			{
 				clearBoard(); //clears the board and resets the buttons
 			}
