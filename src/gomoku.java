@@ -23,6 +23,7 @@ import javax.swing.JTextField;
 
 public class gomoku implements ActionListener
 {
+	//Variables and Objects
 	JFrame frame = new JFrame();
 	JButton[][] button = new JButton[15][15];
 	int[][] board = new int[15][15];
