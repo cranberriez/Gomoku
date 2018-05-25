@@ -43,6 +43,7 @@ public class gomoku implements ActionListener
 	int wwins = 0;
 	checks check = new checks();
 
+	//Constructor
 	public gomoku()
 	{
 		frame.setSize(1000,1000);
@@ -104,7 +105,6 @@ public static void main(String[] args)
 							{
 								ex.printStackTrace();
 							}
-							// current.setText("X");
 							current.setEnabled(false);
 							board[j][i] = B_MOVE;
 							if (check.checkWin(board, B_MOVE, j, i) == true)
@@ -129,12 +129,11 @@ public static void main(String[] args)
 							{
 								ex.printStackTrace();
 							}
-							//current.setText("O");
 							current.setEnabled(false);
 							board[j][i] = W_MOVE;
 							if (check.checkWin(board, W_MOVE, j, i) == true)
 							{
-								//o wins yay
+								//white wins yay
 								wwins++;
 								wname.setText(wPlayerName + " wins: " + wwins);
 								//clearBoard();
@@ -168,12 +167,12 @@ public static void main(String[] args)
 			{
 				board[a][b] = BLANK; //makes the board blank
 				button[a][b].setEnabled(true); //enable all buttons
-				button[a][b].setText(""); //gets rid of x and o text
+				button[a][b].setText(""); //gets rid of black and white text
 				button[a][b].setIcon(null);
 			}
 
 		}
-		turn = B_TURN; //its X's turn
+		turn = B_TURN; //its B's turn
 	}
 
 
