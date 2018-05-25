@@ -1,6 +1,10 @@
-/* Create gomoku
- * Author: Cameron Voigt & Jacob Vilevac
- * Date: 5/25/2018
+/*  Create gomoku
+ *  Author: Cameron Voigt & Jacob Vilevac
+ *  Date: 5/25/2018
+ * 
+ *  Gomoku is like tic tac toe except its on a much larger board (15x15)
+ *  the goal of this program is to offer you a simple version of gomoku that you
+ *  can play with someone else on the same computer.
  */
 
 
@@ -21,9 +25,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-
 public class gomoku implements ActionListener
-
 {
 	//Variables and Objects
 	JFrame frame = new JFrame();
@@ -38,18 +40,22 @@ public class gomoku implements ActionListener
 	Container center = new Container();
 	JLabel bname = new JLabel("Black wins: 0");
 	JLabel wname = new JLabel("White wins: 0");
-
 	Container south = new Container();
 	JButton reset = new JButton("RESET");
 	String bPlayerName = "Black";
 	String wPlayerName = "White";
 	int bwins = 0;
 	int wwins = 0;
-	checks check = new checks();
+	checks check = new checks(); //the check class used for wins and ties
 
 	//Constructor
 	public gomoku()
 	{
+		/*
+		 *  Create the frame and set up all of the containers
+		 *  South has: Black wins, RESET, and White wins
+		 * 	Center has: the 15x15 grid
+		 */
 		frame.setSize(1000,1000);
 		//center container
 		frame.setLayout(new BorderLayout());
@@ -95,11 +101,12 @@ public static void main(String[] args)
 				if (event.getSource().equals(button[j][i]))
 				{
 					current = button[j][i];
-					if (board[j][i] == BLANK)
+					if (board[j][i] == BLANK) //if the current button where you played is blank
 					{
-						if(turn == B_TURN)
+						if(turn == B_TURN) //if its blacks turn
 						{
-							try {
+							try //set black piece to the image of it 
+							{ 
 								Image Black_Piece = ImageIO.read(new File("Black_Piece.JPG"));
 								ImageIcon B_Icon = new ImageIcon(Black_Piece);
 								current.setIcon(B_Icon);
@@ -110,20 +117,21 @@ public static void main(String[] args)
 								ex.printStackTrace();
 							}
 							current.setEnabled(false);
-							board[j][i] = B_MOVE;
-							if (check.checkWin(board, B_MOVE, j, i) == true)
+							board[j][i] = B_MOVE; //sets the board to Blacks move
+							if (check.checkWin(board, B_MOVE, j, i) == true) //if check win for black is true
 							{
 								//bwins yay
-								bwins++;
-								bname.setText(bPlayerName + " wins: " + bwins);
+								bwins++; //add 1 win to black
+								bname.setText(bPlayerName + " wins: " + bwins); //changes the text of wins
 								//clearBoard();
 								System.out.println("Black WIN");
 							}
-							turn = W_TURN;
+							turn = W_TURN; //set turn to white 
 						}
 						else
 						{
-							try {
+							try //sets the white image to the white piece
+							{
 								Image White_Piece = ImageIO.read(new File("White_Piece.JPG"));
 								ImageIcon W_Icon = new ImageIcon(White_Piece);
 								current.setIcon(W_Icon);
@@ -134,20 +142,20 @@ public static void main(String[] args)
 								ex.printStackTrace();
 							}
 							current.setEnabled(false);
-							board[j][i] = W_MOVE;
-							if (check.checkWin(board, W_MOVE, j, i) == true)
+							board[j][i] = W_MOVE; //the board is set to whites move
+							if (check.checkWin(board, W_MOVE, j, i) == true) //if checkwin for white equals true
 							{
 								//white wins yay
-								wwins++;
-								wname.setText(wPlayerName + " wins: " + wwins);
+								wwins++; //add a win to white
+								wname.setText(wPlayerName + " wins: " + wwins); //update the text for win number
 								//clearBoard();
 								System.out.println("White WIN");
 							}
-							turn = B_TURN;
+							turn = B_TURN; //set turn to black
 						}
-						if (check.checkTie(board) == true)
+						if (check.checkTie(board) == true) //if check tie is true
 						{
-							clearBoard();
+							clearBoard(); //clear the board
 						}
 					}
 				}
