@@ -1,6 +1,6 @@
 /* Create gomoku
  * Author: Cameron Voigt & Jacob Vilevac
- * Date: 10/12/2017
+ * Date: 5/25/2018
  */
 
 
@@ -27,20 +27,20 @@ public class gomoku implements ActionListener
 	JButton[][] button = new JButton[15][15];
 	int[][] board = new int[15][15];
 	final int BLANK = 0;
-	final int X_MOVE = 1;
-	final int O_MOVE = 2;
-	final int X_TURN = 0;
-	final int O_TURN = 1;
-	int turn = X_TURN;
+	final int B_MOVE = 1;
+	final int W_MOVE = 2;
+	final int B_TURN = 0;
+	final int W_TURN = 1;
+	int turn = B_TURN;
 	Container center = new Container();
-	JLabel xname = new JLabel("Black wins: 0");
-	JLabel oname = new JLabel("White wins: 0");
+	JLabel bname = new JLabel("Black wins: 0");
+	JLabel wname = new JLabel("White wins: 0");
 	Container south = new Container();
 	JButton reset = new JButton("RESET");
-	String xPlayerName = "Black";
-	String oPlayerName = "White";
-	int xwins = 0;
-	int owins = 0;
+	String bPlayerName = "Black";
+	String wPlayerName = "White";
+	int bwins = 0;
+	int wwins = 0;
 	checks check = new checks();
 
 	public gomoku()
@@ -62,12 +62,12 @@ public class gomoku implements ActionListener
 		frame.add(center, BorderLayout.CENTER);
 		//north center
 		south.setLayout(new GridLayout(1,3));
-		south.add(xname);
-		xname.setHorizontalAlignment(JLabel.CENTER);
+		south.add(bname);
+		bname.setHorizontalAlignment(JLabel.CENTER);
 		south.add(reset);
 		reset.addActionListener(this);
-		south.add(oname);
-		oname.setHorizontalAlignment(JLabel.CENTER);
+		south.add(wname);
+		wname.setHorizontalAlignment(JLabel.CENTER);
 		frame.add(south, BorderLayout.SOUTH);
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -92,7 +92,7 @@ public static void main(String[] args)
 					current = button[j][i];
 					if (board[j][i] == BLANK)
 					{
-						if(turn == X_TURN)
+						if(turn == B_TURN)
 						{
 							try {
 								Image Black_Piece = ImageIO.read(new File("Black_Piece.JPG"));
@@ -106,16 +106,16 @@ public static void main(String[] args)
 							}
 							// current.setText("X");
 							current.setEnabled(false);
-							board[j][i] = X_MOVE;
-							if (check.checkWin(board, X_MOVE, j, i) == true)
+							board[j][i] = B_MOVE;
+							if (check.checkWin(board, B_MOVE, j, i) == true)
 							{
-								//xwins yay
-								xwins++;
-								xname.setText(xPlayerName + " wins: " + xwins);
+								//bwins yay
+								bwins++;
+								bname.setText(bPlayerName + " wins: " + bwins);
 								//clearBoard();
-								System.out.println("X WIN");
+								System.out.println("Black WIN");
 							}
-							turn = O_TURN;
+							turn = W_TURN;
 						}
 						else
 						{
@@ -131,16 +131,16 @@ public static void main(String[] args)
 							}
 							//current.setText("O");
 							current.setEnabled(false);
-							board[j][i] = O_MOVE;
-							if (check.checkWin(board, O_MOVE, j, i) == true)
+							board[j][i] = W_MOVE;
+							if (check.checkWin(board, W_MOVE, j, i) == true)
 							{
 								//o wins yay
-								owins++;
-								oname.setText(oPlayerName + " wins: " + owins);
+								wwins++;
+								wname.setText(wPlayerName + " wins: " + wwins);
 								//clearBoard();
-								System.out.println("O WIN");
+								System.out.println("White WIN");
 							}
-							turn = X_TURN;
+							turn = B_TURN;
 						}
 						if (check.checkTie(board) == true)
 						{
@@ -173,7 +173,7 @@ public static void main(String[] args)
 			}
 
 		}
-		turn = X_TURN; //its X's turn
+		turn = B_TURN; //its X's turn
 	}
 
 

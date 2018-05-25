@@ -10,8 +10,8 @@
 public class checks
 {
 	final int BLANK = 0;
-	final int X_MOVE = 1;
-	final int O_MOVE = 2;
+	final int B_MOVE = 1;
+	final int W_MOVE = 2;
 
 	public boolean checkWin(int[][] board, int player, int x, int y) //goes through and checks every win combination
 	{
@@ -202,6 +202,7 @@ public class checks
 				}
 			}
 		}
+		System.out.println("TIE");
 		return true;
 	}
 
