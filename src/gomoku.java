@@ -21,7 +21,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+
 public class gomoku implements ActionListener
+
 {
 	//Variables and Objects
 	JFrame frame = new JFrame();
@@ -36,6 +38,7 @@ public class gomoku implements ActionListener
 	Container center = new Container();
 	JLabel bname = new JLabel("Black wins: 0");
 	JLabel wname = new JLabel("White wins: 0");
+
 	Container south = new Container();
 	JButton reset = new JButton("RESET");
 	String bPlayerName = "Black";
