@@ -126,6 +126,7 @@ public class checks
 
 		if (total >= 5) //if theres 5 in a row return true
 		{
+			highlight(pieces);
 			return true;
 		}
 
@@ -177,6 +178,7 @@ public class checks
 
 		if (total >= 5) //if theres 5 in a row return true
 		{
+			highlight(pieces);
 			return true;
 		}
 		//--------------------------------------------------------------DIAGNOL /--------------------------------------------------------
@@ -227,6 +229,7 @@ public class checks
 
 		if (total >= 5) //if theres 5 in a row return true
 		{
+			highlight(pieces);
 			return true;
 		}
 
