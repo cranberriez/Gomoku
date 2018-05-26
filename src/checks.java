@@ -28,24 +28,24 @@ public class checks
 		 */
 		//--------------------------------------------------------------------HOROZONTAL---------------------------------------
 		pieces = new int[15][15];
-		pieces[x][y] = 1;
+		pieces[x][y] = player;
 		int total = 1; //count the piece you placed as 1
 		if (x > 0 && board[x-1][y] == player) //left 1
 		{
 			total++;
-			pieces[x-1][y] = 1;
+			pieces[x-1][y] = player;
 			if (x > 1 && board[x-2][y] == player) //left 2
 			{
 				total++; //add one to the total
-				pieces[x-2][y] = 1;
+				pieces[x-2][y] = player;
 				if (x > 2 && board[x-3][y] == player) //left 3
 				{
 					total++; //add one to the total
-					pieces[x-3][y] = 1;
+					pieces[x-3][y] = player;
 					if (x > 3 && board[x-4][y] == player) //left 4
 					{
 						total++; //add one to the total
-						pieces[x-4][y] = 1;
+						pieces[x-4][y] = player;
 					}
 				}
 			}
@@ -54,19 +54,19 @@ public class checks
 		if (x < 14 && board[x+1][y] == player) //right 1
 		{
 			total++; //add one to the total
-			pieces[x+1][y] = 1;
+			pieces[x+1][y] = player;
 			if (x < 13 && board[x+2][y] == player) //right 2
 			{
 				total++; //add one to the total
-				pieces[x+2][y] = 1;
+				pieces[x+2][y] = player;
 				if (x < 12 && board[x+3][y] == player) //right 3
 				{
 					total++; //add one to the total
-					pieces[x+3][y] = 1;
+					pieces[x+3][y] = player;
 					if (x < 11 && board[x+4][y] == player) //right 4
 					{
 						total++; //add one 1 the total
-						pieces[x+4][y] = 1;
+						pieces[x+4][y] = player;
 					}
 				}
 			}
@@ -80,7 +80,7 @@ public class checks
 		
 		//----------------------------------------------------------------------VERTICAL----------------------------------------
 		pieces = new int[15][15];
-		pieces[x][y] = 1;
+		pieces[x][y] = player;
 		total = 1; //count the piece you placed as 1
 		if (y > 0 && board[x][y-1] == player) //up 1
 		{
@@ -132,7 +132,7 @@ public class checks
 
 		//-------------------------------------------------------------------DIAGNOL \--------------------------------------------
 		pieces = new int[15][15];
-		pieces[x][y] = 1;
+		pieces[x][y] = player;
 		total = 1; //count the piece you placed as 1
 		if (x > 0 && y > 0 && board[x-1][y-1] == player) //up left 1
 		{
@@ -183,7 +183,7 @@ public class checks
 		}
 		//--------------------------------------------------------------DIAGNOL /--------------------------------------------------------
 		pieces = new int[15][15];
-		pieces[x][y] = 1;
+		pieces[x][y] = player;
 		total = 1; //count the piece you placed as 1
 		if (x < 14 && y > 0 && board[x+1][y-1] == player) //up right 1
 		{
@@ -241,7 +241,7 @@ public class checks
 			for (int y = 0; y < pieces[x].length; y++) {
 				gomoku.button[x][y].setEnabled(false);
 				gomoku.button[x][y].setBackground(Color.black);
-				if (pieces[x][y] == 1) {
+				if (pieces[x][y] == player) {
 					//System.out.println("Highlighting " + x + " " + y);
 					gomoku.button[x][y].setBorder(BorderFactory.createLineBorder(Color.blue, 5));
 				}
