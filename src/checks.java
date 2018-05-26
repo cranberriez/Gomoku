@@ -74,7 +74,7 @@ public class checks
 
 		if (total >= 5) //if there is 5 in a row return true
 		{
-			highlight(pieces);
+			highlight(pieces, player);
 			return true;
 		}
 		
@@ -126,7 +126,7 @@ public class checks
 
 		if (total >= 5) //if theres 5 in a row return true
 		{
-			highlight(pieces);
+			highlight(pieces, player);
 			return true;
 		}
 
@@ -178,7 +178,7 @@ public class checks
 
 		if (total >= 5) //if theres 5 in a row return true
 		{
-			highlight(pieces);
+			highlight(pieces, player);
 			return true;
 		}
 		//--------------------------------------------------------------DIAGNOL /--------------------------------------------------------
@@ -229,19 +229,21 @@ public class checks
 
 		if (total >= 5) //if theres 5 in a row return true
 		{
-			highlight(pieces);
+			highlight(pieces, player);
 			return true;
 		}
 
 		return false;
 	}
 
-	private void highlight(int[][] pieces) {
+	private void highlight(int[][] pieces, int player) {
 		for (int x = 0; x < pieces.length; x++) {
 			for (int y = 0; y < pieces[x].length; y++) {
+				gomoku.button[x][y].setEnabled(false);
+				gomoku.button[x][y].setBackground(Color.black);
 				if (pieces[x][y] == 1) {
-					System.out.println("Highlighting " + x + " " + y);
-					gomoku.button[x][y].setBorder(BorderFactory.createLineBorder(Color.red, 5));
+					//System.out.println("Highlighting " + x + " " + y);
+					gomoku.button[x][y].setBorder(BorderFactory.createLineBorder(Color.blue, 5));
 				}
 			}
 		}
@@ -259,7 +261,8 @@ public class checks
 				}
 			}
 		}
-		System.out.println("TIE");
+		//System.out.println("TIE");
+		gomoku.alert.setText("! ! ! ITS A TIE ! ! !");
 		return true; //if there are no blank spots return true
 	}
 
