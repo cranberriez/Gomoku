@@ -239,11 +239,11 @@ public class checks
 	private void highlight(int[][] pieces, int player) {
 		for (int x = 0; x < pieces.length; x++) {
 			for (int y = 0; y < pieces[x].length; y++) {
-				gomoku.button[x][y].setEnabled(false);
-				gomoku.button[x][y].setBackground(Color.black);
+				gomoku.button[x][y].setEnabled(false); //disables the buttons
+				gomoku.button[x][y].setBackground(Color.black); //sets all spaces without a piece to black
 				if (pieces[x][y] == player) {
 					//System.out.println("Highlighting " + x + " " + y);
-					gomoku.button[x][y].setBorder(BorderFactory.createLineBorder(Color.blue, 5));
+					gomoku.button[x][y].setBorder(BorderFactory.createLineBorder(Color.blue, 5)); //sets the border of the win to blue
 				}
 			}
 		}

@@ -1,6 +1,6 @@
 /*  Create gomoku
  *  Author: Cameron Voigt & Jacob Vilevac
- *  Date: 5/25/2018
+ *  Date: 5/30/2018
  * 
  *  Gomoku is like tic tac toe except its on a much larger board (15x15)
  *  the goal of this program is to offer you a simple version of gomoku that you
