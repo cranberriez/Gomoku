@@ -193,7 +193,7 @@ public static void main(String[] args)
 	{
 		for (int x = 0; x < board.length; x++)
 		{
-			for (int y = 0; y < board[0].length; y++)
+			for (int y = 0; y < board[0].length; y++)				
 			{
 				board[x][y] = BLANK; //makes the board blank
 				button[x][y].setEnabled(true); //enable all buttons

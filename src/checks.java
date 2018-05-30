@@ -4,7 +4,7 @@ import javax.swing.BorderFactory;
 
 /*
  *  Author: Cameron Voigt & Jacob Vilevac
- *  Date: 5/25/2018
+ *  Date: 5/30/2018
  * 
  *  Class for checking wins and ties
  */
@@ -227,7 +227,7 @@ public class checks
 			}
 		}
 
-		if (total >= 5) //if theres 5 in a row return true
+		if (total >= 5) //if there is 5 in a row return true
 		{
 			highlight(pieces, player);
 			return true;
@@ -236,12 +236,16 @@ public class checks
 		return false;
 	}
 
-	private void highlight(int[][] pieces, int player) {
-		for (int x = 0; x < pieces.length; x++) {
-			for (int y = 0; y < pieces[x].length; y++) {
+	private void highlight(int[][] pieces, int player) //highlight method
+	{
+		for (int x = 0; x < pieces.length; x++) 
+		{
+			for (int y = 0; y < pieces[x].length; y++) 
+			{
 				gomoku.button[x][y].setEnabled(false); //disables the buttons
 				gomoku.button[x][y].setBackground(Color.black); //sets all spaces without a piece to black
-				if (pieces[x][y] == player) {
+				if (pieces[x][y] == player) 
+				{
 					//System.out.println("Highlighting " + x + " " + y);
 					gomoku.button[x][y].setBorder(BorderFactory.createLineBorder(Color.blue, 5)); //sets the border of the win to blue
 				}
