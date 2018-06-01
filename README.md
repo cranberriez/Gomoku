@@ -1,7 +1,7 @@
 # Gomoku
 Gomoku is a game like tic-tac-toe played on a 15x15 grid. The goal of the game is to get five in a row. Once you've gotten five in a row you win the game. Pretty simple, right? Our game has you separated by the piece color: Black and White. You can reset the board and it keeps track of wins. It also highlights the winning row.
 
-**GUI**
+## GUI
 
 ![gui](https://lh5.googleusercontent.com/VjN-Ho9_avfR0fA-omY8RG87Gdu3aWC8jjDd04nf5_WkPOw5l_RDKGCSf_u_2-X981vo-Ca2bVKX0YzdM-uK1by8_ZhCNgfAi8wOycq_p0gh7sFTeXCtzeCEapaplbemhubuhOVG)
 
@@ -45,6 +45,6 @@ What it looks like in your hotbar.
 
 <br/><br/>
 
-**Strategy**
+## Strategy
 	Try to get five in a row and if you can't, just click reset so the other person cant win. It's a really neat trick.
 
