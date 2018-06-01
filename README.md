@@ -3,6 +3,8 @@ Gomoku is a game like tic-tac-toe played on a 15x15 grid. The goal of the game i
 
 GUI
 
+![gui](https://lh5.googleusercontent.com/VjN-Ho9_avfR0fA-omY8RG87Gdu3aWC8jjDd04nf5_WkPOw5l_RDKGCSf_u_2-X981vo-Ca2bVKX0YzdM-uK1by8_ZhCNgfAi8wOycq_p0gh7sFTeXCtzeCEapaplbemhubuhOVG)
+
 We have a pretty simple board. On the bottom left is the black wins and on the bottom right is the white wins. The number updates with each win and will only be set to zero if you relaunch the game. You play pieces by clicking on the square you want to play.
 
 If you click the “RESET BOARD” button you clear it of every piece. (The wins will stay even if you reset the board)
