@@ -132,8 +132,6 @@ public static void main(String[] args)
 								//bwins yay
 								bwins++; //add 1 win to black
 								bname.setText(bPlayerName + " wins: " + bwins); //changes the text of wins
-								//clearBoard();
-								//System.out.println("Black WIN");
 								alert.setText("! ! ! BLACK WIN ! ! !");
 							}
 							else {
@@ -161,8 +159,6 @@ public static void main(String[] args)
 								//white wins yay
 								wwins++; //add a win to white
 								wname.setText(wPlayerName + " wins: " + wwins); //update the text for win number
-								//clearBoard();
-								//System.out.println("White WIN");
 								alert.setText("! ! ! WHITE WIN ! ! !");
 							}
 							else {
