@@ -1,8 +1,7 @@
 
-[Trello Page](https://trello.com/b/3gbvddoQ/gomoku)
+[Trello Page](https://trello.com/b/3gbvddoQ/gomoku)<br/>
 [Google Docs URL w/ Pictures](https://docs.google.com/document/d/1Lgo2vIX3HL_r-9MgLu2o8XA5PFX7zThyQLpQDD1bSXk/edit?usp=sharing)
 
-<br/>
 
 # Gomoku
 Gomoku is a game like tic-tac-toe played on a 15x15 grid. The goal of the game is to get five in a row. Once you've gotten five in a row you win the game. Pretty simple, right? Our game has you separated by the piece color: Black and White. You can reset the board and it keeps track of wins. It also highlights the winning row.
