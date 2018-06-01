@@ -46,5 +46,5 @@ What it looks like in your hotbar.
 <br/><br/>
 
 ## Strategy
-	Try to get five in a row and if you can't, just click reset so the other person cant win. It's a really neat trick.
+Try to get five in a row and if you can't, just click reset so the other person cant win. It's a really neat trick.
 
